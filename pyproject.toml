@@ -7,4 +7,5 @@ requires-python = ">=3.13"
 dependencies = [
     "cadquery>=1.0",
     "cq-editor>=0.5",
+    "yacv-server>=0.10.11"
 ]

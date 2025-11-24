@@ -2,12 +2,6 @@
 import cadquery as cq
 from cadquery.vis import show, style
 
-def box_shell(width: float, height: float, outside_fillet: float) -> cq.Workplane:
-
-    result = cq.Workplane("XY").box(width, width, height).edges("|Z").fillet(outside_fillet)
-
-    return result
-
 def side_shell(shape, thickness: float) -> cq.Workplane:
 
     shell = shape.faces("+Z or -Z").shell(thickness)
@@ -41,13 +35,8 @@ def test_piece(width: float, height:float, wall:float = 4):
 
     return full_piece
 
-
-
-
-
 test_1 = test_piece(60, 40)
-
 
 show(style(test_1, color="red", alpha=0.25), gradient=False)
 
-#show(style(box_shell, color="blue", alpha=0.5), style(box, color="red", alpha=0.25), gradient=False)
+#show(style(shell_1, color="blue", alpha=0.5), style(test_1, color="red", alpha=0.25), gradient=False)
